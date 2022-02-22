@@ -13,4 +13,6 @@
     <string name="WelcomeSplashMsg">The Secret Club</string>
     <string name="loginBtn">Login</string>
     <string name="registerBtn">Register</string>
+    <string name="emailTextView">Email: </string>
+    <string name="passTextView">Password: </string>
 </resources>
