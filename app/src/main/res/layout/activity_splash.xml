@@ -7,24 +7,33 @@
     tools:context=".SplashActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/splashMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/WelcomeSplashMsg"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
         tools:text="@string/WelcomeSplashMsg" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="235dp"
-        android:layout_height="450dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:id="@+id/splashImg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:padding="40dp"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/splashMsg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/heckin_puppers" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

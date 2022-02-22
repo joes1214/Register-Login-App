@@ -11,4 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="WelcomeSplashMsg">The Secret Club</string>
+    <string name="loginBtn">Login</string>
+    <string name="registerBtn">Register</string>
 </resources>
