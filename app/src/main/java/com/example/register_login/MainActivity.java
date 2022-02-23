@@ -2,20 +2,10 @@ package com.example.register_login;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.view.View;
-
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
 import com.example.register_login.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -57,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
                     passForm.requestFocus();
                 }
                 //insert validation to login
+                //currently there is no valid login :(
+                //I wanted to have the registration info save and allow the user to log in
 
                 startActivity(loginIntent);
             }
