@@ -41,16 +41,17 @@ public class MainActivity extends AppCompatActivity {
                 if(emailForm.getText().toString().trim().length()==0){
                     emailForm.setError("Invalid Entry");
                     emailForm.requestFocus();
-                }
-                if(passForm.getText().toString().trim().length()==0){
+                } else if(passForm.getText().toString().trim().length()==0){
                     passForm.setError("Invalid Entry");
                     passForm.requestFocus();
+                }else{
+                    startActivity(loginIntent);
                 }
                 //insert validation to login
                 //currently there is no valid login :(
                 //I wanted to have the registration info save and allow the user to log in
 
-                startActivity(loginIntent);
+
             }
         });
 
