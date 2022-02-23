@@ -9,20 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegisterLogin">
-
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Registration"
+            android:exported="false" />
+        <activity
+            android:name=".LoginTrue"
+            android:exported="false"
+            android:label="Login Successful"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.twoactivities.MainActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.RegisterLogin.NoActionBar">
-        </activity>
-
+            android:label="@string/loginTitle"
+            android:theme="@style/Theme.RegisterLogin.NoActionBar" />
         <activity
             android:name=".SplashActivity"
-            android:label="SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

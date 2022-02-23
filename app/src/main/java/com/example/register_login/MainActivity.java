@@ -1,5 +1,6 @@
 package com.example.register_login;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -17,34 +18,59 @@ import com.example.register_login.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    EditText emailForm, passForm;
+    Button loginBtn, registerBtn;
+
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        //Creates the necessary values for login
+        emailForm = (EditText)findViewById(R.id.emailForm);
+        passForm = (EditText)findViewById(R.id.passForm);
 
-        setSupportActionBar(binding.toolbar);
+        loginBtn = (Button)findViewById(R.id.loginBtn);
+        registerBtn = (Button)findViewById(R.id.registerBtn);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        Intent loginIntent = new Intent(this, LoginTrue.class);
+        Intent regIntent = new Intent(this, RegisterActivity.class);
 
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(emailForm.getText().toString().trim().length()==0){
+                    emailForm.setError("Invalid Entry");
+                    emailForm.requestFocus();
+                }
+                if(passForm.getText().toString().trim().length()==0){
+                    passForm.setError("Invalid Entry");
+                    passForm.requestFocus();
+                }
+                //insert validation to login
+
+                startActivity(loginIntent);
             }
         });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(regIntent);
+            }
+        });
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -68,10 +94,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
+
 }
