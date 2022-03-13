@@ -1,29 +1,33 @@
 package com.example.register_login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
-import androidx.navigation.ui.AppBarConfiguration;
-import com.example.register_login.databinding.ActivityMainBinding;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
     EditText emailForm, passForm;
     Button loginBtn, registerBtn;
 
-
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+    private String validEmail;
+    private String validPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences preferences = getSharedPreferences("PREFS", 0);
+
+        validEmail = preferences.getString("validEmail", "admin");
+        validPassword = preferences.getString("validPassword", "1234");
 
         //Creates the necessary values for login
         emailForm = (EditText)findViewById(R.id.emailForm);
@@ -35,32 +39,27 @@ public class MainActivity extends AppCompatActivity {
         Intent loginIntent = new Intent(this, LoginTrue.class);
         Intent regIntent = new Intent(this, RegisterActivity.class);
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(emailForm.getText().toString().trim().length()==0){
-                    emailForm.setError("Invalid Entry");
-                    emailForm.requestFocus();
-                } else if(passForm.getText().toString().trim().length()==0){
-                    passForm.setError("Invalid Entry");
-                    passForm.requestFocus();
-                }else{
+        loginBtn.setOnClickListener(view -> {
+            if(emailForm.getText().toString().trim().length()==0){
+                emailForm.setError("Invalid Entry");
+                emailForm.requestFocus();
+            } else if(passForm.getText().toString().trim().length()==0){
+                passForm.setError("Invalid Entry");
+                passForm.requestFocus();
+            }else{
+
+                if(emailForm.getText().toString().trim().equalsIgnoreCase(validEmail) && passForm.getText().toString().trim().equalsIgnoreCase(validPassword)){
+                    //Log.d("current", "Entering LoginClass");
                     startActivity(loginIntent);
+                }else{
+                    emailForm.setError("Invalid Entry");
+                    passForm.setError("Invalid Entry");
                 }
-                //insert validation to login
-                //currently there is no valid login :(
-                //I wanted to have the registration info save and allow the user to log in
-
-
             }
+
         });
 
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(regIntent);
-            }
-        });
+        registerBtn.setOnClickListener(view -> startActivity(regIntent));
 
     }
 
@@ -86,6 +85,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

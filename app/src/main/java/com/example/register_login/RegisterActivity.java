@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -21,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText[] forms;
     Button regBtn, dobForm;
     private DatePickerDialog datePickerDialog; //https://www.youtube.com/watch?v=qCoidM98zNk is where I got this
+    private String validEmail, validPassword;
 
     //This whole section is a mess. I'm so sorry
     @Override
@@ -67,6 +69,16 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 //Afterwards checks to see if all the information is correct
                 if(validInfo()){
+                    //replaces the SharedPreferences from admin;1234 to whatever the user sets
+                    validEmail = forms[2].getText().toString().trim();
+                    validPassword = forms[3].getText().toString().trim();
+
+                    SharedPreferences preferences = getSharedPreferences("PREFS", 0);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("validEmail", validEmail);
+                    editor.putString("validPassword", validPassword);
+                    editor.apply();
+
                     toast.show();
                     startActivity(regReturn);
                 }

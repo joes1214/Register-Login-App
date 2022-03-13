@@ -21,4 +21,69 @@
     <string name="fNameTV">Name: </string>
     <string name="lNameTV">Last: </string>
     <string name="birthTV">Birthday: </string>
+
+    <string name="currentScoretxt">Score: </string>
+
+    <!--Choices-->
+    <string name="aChoiceText">a. </string>
+    <string name="bChoiceText">b. </string>
+    <string name="cChoiceText">c. </string>
+    <string name="dChoiceText">d. </string>
+
+    <string name="firstPlace">1. </string>
+    <string name="secondPlace">2. </string>
+    <string name="thirdPlace">3. </string>
+
+    <string name="finalScore">Final Score:</string>
+
+    <string name="tryAgain">Try Again</string>
+    <string name="getmetfOut">Exit</string>
+
+    <string name="trueText">True</string>
+    <string name="falseText">False</string>
+
+    <string name="FILLER">FILLER</string>
+
+    <!--Questions to ask-->
+    <string name="Question1">Tomatoes and Nightshade are related.</string>
+    <string name="Question2">When getting level 99 in a skill in Runescape, what level is the half way point?</string>
+    <string name="Question3">Which of these is NOT a Linux distribution?</string>
+    <string name="Question4">Which one of these is a Pokemon name?</string>
+    <string name="Question5">What is the name of the Stand used by this person?</string>
+    <string name="Question6">Yes or Yes?</string>
+
+    <!--Question Responses-->
+
+    <string name="Question2a">50</string>
+    <string name="Question2b">81</string>
+    <string name="Question2c">92</string>
+    <string name="Question2d">60</string>
+
+
+    <string name="Question3a">Arch</string>
+    <string name="Question3b">Manjaro</string>
+    <string name="Question3c">Ubuntu</string>
+    <string name="Question3d">Dragonair</string>
+
+    <string name="Question4a">Python</string>
+    <string name="Question4b">Feebas</string>
+    <string name="Question4c">Hadoop</string>
+    <string name="Question4d">Scala</string>
+
+
+    <string name="Question5a">Paisley Park</string>
+    <string name="Question5b">Killer Queen</string>
+    <string name="Question5c">Hermit Purple</string>
+    <string name="Question5d">Heaven\'s Door</string>
+
+    <string name="Question6a">Yes</string>
+    <string name="Question6b">Yes</string>
+    <string name="Question6c">Yes</string>
+    <string name="Question6d">Yes</string>
+
+    <string name="diagPopup">Welcome to the quiz game!\n\nFor this, you will answer questions\n
+        to the best of your abilities.\n\nThere are 6 questions, can you answer them all??\n\nGood luck!</string>
+    <!-- how do I make it look nice :/ -->
+
+
 </resources>

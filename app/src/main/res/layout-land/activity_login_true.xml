@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LoginTrue">
+
+        <ImageView
+            android:id="@+id/questionImg"
+            android:layout_width="249dp"
+            android:layout_height="206dp"
+            android:src="@drawable/dragon_scimitar">
+
+        </ImageView>
+        <TextView
+            android:id="@+id/txtQuestion"
+            android:padding="10dp"
+            android:text="@string/FILLER"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentScore"
+            android:padding="4dp"
+            android:text="@string/currentScoretxt"
+            android:textColor="@color/black">
+
+        </TextView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/answerA"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:text="@string/aChoiceText">
+
+            </Button>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/responseA"
+                android:padding="2dp"
+                android:text="@string/FILLER"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <Button
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/answerB"
+                android:text="@string/bChoiceText">
+
+            </Button>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/responseB"
+                android:padding="2dp"
+                android:text="@string/FILLER"
+                android:textColor="@color/black">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+            <Button
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/answerC"
+                android:text="@string/cChoiceText">
+            </Button>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/responseC"
+                android:padding="2dp"
+                android:text="@string/FILLER"
+                android:textColor="@color/black">
+
+            </TextView>
+
+            <Button
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/answerD"
+                android:text="@string/dChoiceText">
+
+            </Button>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/responseD"
+                android:padding="2dp"
+                android:text="@string/FILLER"
+                android:textColor="@color/black">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

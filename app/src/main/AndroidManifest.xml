@@ -11,12 +11,12 @@
         android:theme="@style/Theme.RegisterLogin">
         <activity
             android:name=".RegisterActivity"
-            android:label="Registration"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Registration" />
         <activity
             android:name=".LoginTrue"
             android:exported="false"
-            android:label="Login Successful"
+            android:label="Quiz Game"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -37,6 +37,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".scoreBoardActivity"
+            android:exported="false"
+            android:label="High Score" />
     </application>
 
 </manifest>
